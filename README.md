@@ -4,12 +4,12 @@ A series of **Matrix-style falling-code screensavers** for the **TRS-80 Model II
 
 The display is monochrome and character-based: 64 columns by 16 rows, video RAM at `3C00h`–`3FFFh`. Rather than reproducing modern colour and brightness effects, the programs use changing glyphs, variable-speed columns, gaps, and trailing characters to suggest the familiar digital rain.
 
-## Current version: MATRIXR5
+## Current version: MATRIXR6
 
-**`bin/MATRIXR5.CMD`** is the latest build. It adds an automatic alternating cycle:
+**`bin/MATRIXR6.CMD`** is the latest build. It continues the progressive falling-space effect with a shorter blank interval:
 
 - Normal, animated falling characters for an approximately random 5–10 seconds.
-- **Progressive blank rain** for another approximately random 5–10 seconds: moving streams replace only the characters they touch with **spaces**, so existing code is erased gradually, not all at once.
+- **Progressive blank rain** for approximately **one second** (38 animation frames): moving streams replace only the characters they touch with **spaces**, so existing code is erased gradually, not all at once.
 - Returns to normal rain and repeats automatically; falling-column state continues progressing during the blank phase.
 
 Timing is approximate because it is tied to animation frames, not a real-time clock.
@@ -18,12 +18,12 @@ Timing is approximate because it is tied to animation frames, not a real-time cl
 
 ## Running on a Model III
 
-1. Import `bin/MATRIXR5.CMD` into a TRS-80-compatible disk image or onto a physical disk as **`MATRIXR5/CMD`**. A `.CMD` on your modern PC is **not itself a TRS-80 disk image**.
+1. Import `bin/MATRIXR6.CMD` into a TRS-80-compatible disk image or onto a physical disk as **`MATRIXR6/CMD`**. A `.CMD` on your modern PC is **not itself a TRS-80 disk image**.
 2. Boot your compatible disk operating system (tested by the creator with earlier versions on **LDOS 5.1**).
 3. At `LDOS READY`, type:
 
    ```text
-   MATRIXR5
+   MATRIXR6
    ```
 
 4. Release `ENTER`, then press **any key** to clear the screen and return to DOS.
@@ -49,7 +49,8 @@ The `.CMD` files load at `6000h`, draw to `3C00h`–`3FFFh`, poll the keyboard a
 | `MATRIXF2` | Removes full-block, dot, colon and semicolon characters |
 | `MATRIXR3` | Layered streams; per-column speeds; more natural flow and gaps |
 | `MATRIXR4` | MATRIXR3 with timed invisible rain; clears screen instantly at phase transition |
-| **`MATRIXR5`** | Timed progressive blank rain: space glyphs fall and erase existing code one cell at a time |
+| `MATRIXR5` | Progressive blank rain for a random 5–10 seconds |
+| **`MATRIXR6`** | Identical progressive space rain but shortened to about 1 second; normal rain remains random 5–10 seconds |
 
 See [docs/VERSIONS.md](docs/VERSIONS.md) for detail.
 
@@ -61,11 +62,11 @@ Python 3 is sufficient; no third-party package is needed:
 python3 tools/build.py
 ```
 
-This assembles the six sources into `build/` and checks each generated binary against the corresponding file in `bin/`.
+This assembles the seven sources into `build/` and checks each generated binary against the corresponding file in `bin/`.
 
 ## Compatibility and testing
 
-The original MATRIX3 machine-code build was tested in software, and the earlier `MATRIX3` and `MATRIXFX` variants have been reported working on a physical Model III. The later assemblies have been checked for valid `.CMD` framing and reproducible compilation, but **MATRIXR5 has not yet been tested on physical hardware**. As with other retro-computing tools, keep original disks protected and try software on a copy.
+The original MATRIX3 machine-code build was tested in software, and the earlier `MATRIX3` and `MATRIXFX` variants have been reported working on a physical Model III. The later assemblies have been checked for valid `.CMD` framing and reproducible compilation, but **MATRIXR6 has not yet been tested on physical hardware**. As with other retro-computing tools, keep original disks protected and try software on a copy.
 
 ## References
 

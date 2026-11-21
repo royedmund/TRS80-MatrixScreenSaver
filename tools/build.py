@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "build"
 OUT.mkdir(exist_ok=True)
 failure = False
-for name in ("MATRIX3", "MATRIXFX", "MATRIXF2", "MATRIXR3", "MATRIXR4", "MATRIXR5"):
+for name in ("MATRIX3", "MATRIXFX", "MATRIXF2", "MATRIXR3", "MATRIXR4", "MATRIXR5", "MATRIXR6"):
     source = (ROOT / "src" / (name + ".ASM")).read_text(encoding="utf-8")
     machine, symbols = assemble(source)
     output = cmd(machine)
@@ -19,4 +19,4 @@ for name in ("MATRIX3", "MATRIXFX", "MATRIXF2", "MATRIXR3", "MATRIXR4", "MATRIXR
     print(name, "MATCH" if ok else "MISMATCH", len(output), "bytes")
 if failure:
     sys.exit("At least one generated executable differs from the checked-in release")
-print("All six releases rebuilt successfully.")
+print("All seven releases rebuilt successfully.")
