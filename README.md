@@ -24,6 +24,14 @@ Timing is approximate because it is tied to animation frames, not a real-time cl
 
 **Character restrictions:** the later builds deliberately do not draw code `191` (full block) or ASCII `46` (`.`), `58` (`:`), or `59` (`;`). Code `32` (space) is used for gaps, erasure and the invisible phase. Character appearance also depends on the fitted ROM and active character bank.
 
+## BASIC port of MATRIXR6
+
+Prefer interpreted BASIC? The [**MATRIXR6.BAS listing**](basic/MATRIXR6.BAS) recreates the latest Z80 release using standard Model III/LDOS BASIC, including the extended ROM glyphs, individually moving streams, **roughly one second of falling SPACE characters** and no full-screen clear at the phase change.
+
+The BASIC version reads the Model III system seconds and interrupt countdown (`PEEK(16919)` and `PEEK(16918)`) for approximate wall-clock timing: **5–10 seconds of visible rain, then about one second of progressive blank rain**. It is significantly slower than the Z80 executable. As a text listing, the `.BAS` file is **not yet a tokenised LDOS BASIC program**—enter the numbered lines or import/convert the text using a compatible disk-image utility. Type `RUN` within BASIC to start, and press any key to exit.
+
+See [BASIC instructions](docs/INSTALL.md#basic-version) and the [assembly source](src/MATRIXR6.ASM). Timing and glyph appearance depend on your Model III and selected character ROM; the BASIC listing has not yet been tested on physical hardware.
+
 ## Running on a Model III
 
 1. Import `bin/MATRIXR6.CMD` into a TRS-80-compatible disk image or onto a physical disk as **`MATRIXR6/CMD`**. A `.CMD` on your modern PC is **not itself a TRS-80 disk image**.

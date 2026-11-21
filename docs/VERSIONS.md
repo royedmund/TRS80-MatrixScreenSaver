@@ -7,6 +7,6 @@
 - **MATRIXR4** — Random normal and invisible-rain phases; clears the whole screen at mode change.
 - **MATRIXR5** — Earlier progressive-blank release. During the invisible phase, streams continue falling but write ASCII 32 at their normal moving positions, progressively replacing existing code, without clearing the entire screen at mode change.
 
-- **MATRIXR6** — **Current release.** Falling spaces progressively erase existing code for approximately **one second** (38 animation frames), then visible rain resumes. The normal phase remains random 5–10 seconds. No full-screen clear occurs at phase changes.
+- **MATRIXR6** — **Current Z80 release.** Falling spaces progressively erase existing code for approximately **one second** (38 animation frames), then visible rain resumes. The normal phase remains random 5–10 seconds. No full-screen clear occurs at phase changes. **Also available as [MATRIXR6.BAS](../basic/MATRIXR6.BAS)**: an interpreted BASIC port using Model III clock ticks for timing.
 
 All programs are for a 48 KB TRS-80 Model III. Their special symbols depend on the installed character ROM. Later versions avoid glyph codes 191, 46, 58 and 59.
