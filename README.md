@@ -4,6 +4,14 @@ A series of **Matrix-style falling-code screensavers** for the **TRS-80 Model II
 
 The display is monochrome and character-based: 64 columns by 16 rows, video RAM at `3C00h`–`3FFFh`. Rather than reproducing modern colour and brightness effects, the programs use changing glyphs, variable-speed columns, gaps, and trailing characters to suggest the familiar digital rain.
 
+## Video demonstration — running on the real Model III
+
+[![TRS-80 Model III Matrix Rain screensaver running on original hardware — click to watch the video](media/TRS80_Model_III_Matrix_Demo.jpg)](media/TRS80_Model_III_Matrix_Demo.mp4)
+
+**[▶ Watch the 9-second video demo (MP4)](media/TRS80_Model_III_Matrix_Demo.mp4)**
+
+Recorded by **Roy Edmund Antaw** on his restored TRS-80 Model III. The original phone recording was converted to a compact, web-compatible H.264 MP4 (640 × 360, without audio) for convenient viewing and downloading from GitHub. Click the preview image or the video link to open it.
+
 ## Current version: MATRIXR6
 
 **`bin/MATRIXR6.CMD`** is the latest build. It continues the progressive falling-space effect with a shorter blank interval:
