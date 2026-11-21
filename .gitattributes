@@ -1,0 +1,5 @@
+*.CMD binary
+*.ASM text eol=lf
+*.BAS text eol=lf
+*.md text eol=lf
+*.TXT text eol=lf
